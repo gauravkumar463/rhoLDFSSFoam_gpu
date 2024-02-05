@@ -1,0 +1,38 @@
+Bootstrap: localimage
+From: cuda8.sif
+
+%environment
+    export CUDA_HOME=/usr/local/cuda
+    export PATH=$CUDA_HOME/bin:$PATH
+    export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+%files
+    RapidCFD-dev /usr/local/
+    ThirdParty-dev /usr/local/
+%post
+
+    export CUDA_HOME=/usr/local/cuda
+    export PATH=$CUDA_HOME/bin:$PATH
+    export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+    mkdir -p /usr/local/RapidCFD
+    cd /usr/local/RapidCFD
+    mv /usr/local/RapidCFD-dev /usr/local/ThirdParty-dev ./
+
+    cd ThirdParty-dev
+
+    wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.2.tar.gz
+    tar zxvf openmpi-4.0.2.tar.gz && rm openmpi-4.0.2.tar.gz 
+    
+    wget https://gforge.inria.fr/frs/download.php/file/38352/scotch_6.1.0.tar.gz
+    tar zxvf scotch_6.1.0.tar.gz && rm scotch_6.1.0.tar.gz
+
+    cd ../RapidCFD-dev
+    export WM_PRECISION_OPTION=SP
+    . etc/bashrc -f
+    ./Allwmake
+
+    export WM_PRECISION_OPTION=DP
+    . etc/bashrc -f
+    ./Allwmake
+

@@ -1,0 +1,29 @@
+Bootstrap: docker
+From: ubuntu:16.04
+
+%environment
+    export CUDA_HOME=/usr/local/cuda
+    export PATH=$CUDA_HOME/bin:$PATH
+    export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+%files
+     nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb /
+     cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb /
+     cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb /
+%post
+    apt update
+    apt install -y build-essential autoconf autotools-dev
+    apt install -y wget hwloc flex libfl-dev libreadline-dev zlib1g-dev
+    apt install -y wget git hwloc libpmi0-dev vim
+    apt clean
+    rm -rf /var/lib/apt/lists/*
+
+    cd /
+    export DEBIAN_FRONTEND=noninteractive
+    dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
+    apt update
+    dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+    dpkg -i cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb
+    rm nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb cuda-repo-ubuntu1604-8-0-local-cublas-performance-update_8.0.61-1_amd64.deb
+    apt update
+    apt -y install cuda

@@ -1,0 +1,5 @@
+pFlux = ((q-(e-e0)+(thermo.Cv()*T))*rhoFlux - (U & rhoUFlux) + rhoEFlux)*(thermo.gamma()-1.0);
+
+UFlux = (-(rhoFlux*U) + rhoUFlux)/(rho);
+
+eFlux = ((q-(e-e0))*rhoFlux - (U & rhoUFlux) + rhoEFlux)/rho;

@@ -1,0 +1,247 @@
+Making dependency list for source file rhoLDFSSFoam.C
+SOURCE=rhoLDFSSFoam.C ;  nvcc -Xptxas -dlcm=cg -std=c++11 -m64 -arch=sm_30 -Dlinux64 -DWM_DP -Xcompiler -Wall -Xcompiler -Wextra -Xcompiler -Wno-unused-parameter -Xcompiler -Wno-vla -Xcudafe "--diag_suppress=null_reference" -Xcudafe "--diag_suppress=subscript_out_of_range" -Xcudafe "--diag_suppress=extra_semicolon" -Xcudafe "--diag_suppress=partial_override" -Xcudafe "--diag_suppress=implicit_return_from_non_void_function" -Xcudafe "--diag_suppress=virtual_function_decl_hidden" -O3  -DNoRepository -I/usr/local/RapidCFD/RapidCFD-dev/applications/solvers/compressible/rhoCentralFoam/BCs/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/finiteVolume/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/transportModels/compressible/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/thermophysicalModels/basic/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/thermophysicalModels/specie/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/TurbulenceModels/turbulenceModels/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/TurbulenceModels/compressible/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/dynamicMesh/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/meshTools/lnInclude  -IlnInclude -I. -I/usr/local/RapidCFD/RapidCFD-dev/src/OpenFOAM/lnInclude -I/usr/local/RapidCFD/RapidCFD-dev/src/OSspecific/POSIX/lnInclude   -Xcompiler -fPIC -x cu -D__HOST____DEVICE__='__host__ __device__' -o Make/linux64NvccDPOpt/rhoLDFSSFoam.o -c $SOURCE
+createFields.H(172): error: name followed by "::" must be a class or namespace name
+
+createFields.H(174): error: name followed by "::" must be a class or namespace name
+
+createFields.H(304): error: identifier "ITstream" is undefined
+
+createFields.H(304): error: more than one conversion function from "Foam::ITstream" to "<error-type>" applies:
+            function "Foam::IOstream::operator void *() const"
+            function "Foam::UList<T>::operator const Foam::List<T> &() const [with T=Foam::token]"
+
+createFieldRefs.H(17): error: identifier "inviscidFlux" is undefined
+
+createFieldRefs.H(19): error: Vector is not a template
+
+inviscidFlux.H(23): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(24): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(25): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(26): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(27): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(28): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(29): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(30): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(31): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(32): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(33): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(34): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(35): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(36): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(37): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(38): error: no operator "[]" matches these operands
+            operand types are: const Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(39): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(44): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "Boundary"
+
+inviscidFlux.H(44): error: identifier "bfield" is undefined
+
+inviscidFlux.H(44): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(48): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(50): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(51): error: identifier "fvsPatchVectorField" is undefined
+
+inviscidFlux.H(51): error: identifier "phiUpp" is undefined
+
+inviscidFlux.H(51): error: class "Foam::GeometricField<Foam::vector, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(52): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(53): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(54): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(55): error: identifier "fvPatchVectorField" is undefined
+
+inviscidFlux.H(56): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(57): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(58): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(60): error: "fvsPatchVectorField" is not a type name
+
+inviscidFlux.H(65): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(66): error: identifier "vectorField" is undefined
+
+inviscidFlux.H(67): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(68): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(69): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(70): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(71): error: identifier "vectorField" is undefined
+
+inviscidFlux.H(72): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(73): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(74): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(94): error: no operator "[]" matches these operands
+            operand types are: const Foam::fvsPatchScalarField [ Foam::label ]
+
+inviscidFlux.H(96): error: no operator "[]" matches these operands
+            operand types are: const Foam::fvsPatchScalarField [ Foam::label ]
+
+inviscidFlux.H(121): error: no operator "[]" matches these operands
+            operand types are: const Foam::fvsPatchScalarField [ Foam::label ]
+
+inviscidFlux.H(123): error: no operator "[]" matches these operands
+            operand types are: const Foam::fvsPatchScalarField [ Foam::label ]
+
+centralCourantNo.H(34): error: class "Foam::GeometricField<Foam::scalar, Foam::fvPatchField, Foam::volMesh>" has no member "primitiveField"
+
+centralCourantNo.H(38): error: class "Foam::DimensionedField<Foam::scalar, Foam::volMesh>" has no member "field"
+
+centralCourantNo.H(38): error: identifier "gMax" is undefined
+
+centralCourantNo.H(40): error: class "Foam::DimensionedField<Foam::scalar, Foam::volMesh>" has no member "field"
+
+centralCourantNo.H(40): error: identifier "gSum" is undefined
+
+inviscidFlux.H(23): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(24): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(25): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(26): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(27): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(28): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(29): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(30): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(31): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(32): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(33): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(34): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(35): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(36): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(37): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(38): error: no operator "[]" matches these operands
+            operand types are: const Foam::surfaceVectorField [ Foam::label ]
+
+inviscidFlux.H(39): error: no operator "[]" matches these operands
+            operand types are: Foam::surfaceScalarField [ Foam::label ]
+
+inviscidFlux.H(44): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "Boundary"
+
+inviscidFlux.H(44): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(48): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(50): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(51): error: identifier "fvsPatchVectorField" is undefined
+
+inviscidFlux.H(51): error: identifier "phiUpp" is undefined
+
+inviscidFlux.H(51): error: class "Foam::GeometricField<Foam::vector, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(52): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(53): error: class "Foam::GeometricField<Foam::scalar, Foam::fvsPatchField, Foam::surfaceMesh>" has no member "boundaryFieldRef"
+
+inviscidFlux.H(54): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(55): error: identifier "fvPatchVectorField" is undefined
+
+inviscidFlux.H(56): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(57): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(58): error: identifier "fvPatchScalarField" is undefined
+
+inviscidFlux.H(60): error: "fvsPatchVectorField" is not a type name
+
+inviscidFlux.H(65): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(66): error: identifier "vectorField" is undefined
+
+inviscidFlux.H(67): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(68): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(69): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(70): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(71): error: identifier "vectorField" is undefined
+
+inviscidFlux.H(72): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(73): error: identifier "scalarField" is undefined
+
+inviscidFlux.H(74): error: identifier "scalarField" is undefined
+
+Error limit reached.
+100 errors detected in the compilation of "/tmp/tmpxft_002291b9_00000000-7_rhoLDFSSFoam.cpp1.ii".
+Compilation terminated.
+rhoLDFSSFoam.dep:683: recipe for target 'Make/linux64NvccDPOpt/rhoLDFSSFoam.o' failed
+make: *** [Make/linux64NvccDPOpt/rhoLDFSSFoam.o] Error 4
